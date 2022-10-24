@@ -29,17 +29,14 @@ main {
 
 .heading-secondary {
   font-family: 'Press Start 2P', cursive;
-  color: #fff;
+
   font-size: 8rem;
-  text-shadow: -5px -5px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 
 .pipe {
   position: absolute;
   bottom: 0;
   width: 80px;
-
-  animation: pipeAnimation 2s infinite linear;
 }
 
 .mario {
@@ -52,6 +49,13 @@ main {
   position: absolute;
   top: 20px;
   width: 550px;
+}
+
+.pipe-animation {
+  animation: pipeAnimation 2s infinite linear;
+}
+
+.clouds-animation {
   animation: cloudsAnimation 20s infinite linear;
 }
 
@@ -127,22 +131,37 @@ main {
   animation: jump 2s ease-out;
 }
 
-.game-over__btn {
+.btn-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+/* *********************** */
+/* BUTTONS*/
+/* *********************** */
+
 .btn {
   display: inline-block;
   border: none;
   font-family: 'Press Start 2P', cursive;
-  text-shadow: -1px -1px 0 #fff, 0px -0px 0 #fff, -0px 0px 0 #fff;
+  color: inherit;
+  text-shadow: inherit;
   font-weight: 600;
   font-size: 1.6rem;
   border-radius: 5px;
   padding: 2rem 4rem;
   background-color: transparent;
+}
+
+.btn-color__game-over {
+  color: rgb(0, 0, 0);
+  text-shadow: -1px -1px 0 #fff, 0px -0px 0 #fff, -0px 0px 0 #fff;
+}
+
+.btn-color__menu-game {
+  color: rgb(255, 255, 255);
+  text-shadow: -1px -1px 0 red, 0px -0px 0 red, -0px 0px 0 red;
 }
 
 @keyframes slidein {
@@ -181,4 +200,31 @@ main {
 .slideout-animation {
   -webkit-animation: slideout 0.5s ease;
   animation: slideout 0.5s ease;
+}
+
+.color-red {
+  color: red;
+  text-shadow: -5px -5px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.color-white {
+  text-shadow: -5px -5px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  color: #fff;
+}
+
+/* *********************** */
+/* MENU GAME*/
+/* *********************** */
+.menu-game {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  -webkit-animation: slidein 0.5s ease;
+  animation: slidein 0.5s ease;
 }
